@@ -1,0 +1,32 @@
+{
+  "name": "retext-walk",
+  "version": "0.0.1",
+  "description": "Retext node walker",
+  "license": "MIT",
+  "keywords": [
+    "retext",
+    "walk"
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com>",
+  "devDependencies": {
+    "eslint": "^0.8.0",
+    "istanbul": "^0.3.0",
+    "jscs": "^1.5.0",
+    "mocha": "^1.20.0",
+    "retext": "^0.2.0-rc.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/retext-walk.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports test.js",
+    "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports test.js",
+    "lint": "npm run lint-api && npm run lint-test && npm run lint-style",
+    "lint-api": "node_modules/.bin/eslint index.js --env node --env browser --rule 'quotes: [2, single]'",
+    "lint-test": "node_modules/.bin/eslint test.js --env node --env mocha --rule 'quotes: [2, single]'",
+    "lint-style": "node_modules/.bin/jscs index.js test.js --reporter=inline",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- test.js",
+    "make": "npm run lint && npm run coverage"
+  }
+}

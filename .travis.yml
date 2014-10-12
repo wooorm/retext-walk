@@ -1,0 +1,13 @@
+language: node_js
+script: npm run-script test-travis
+node_js:
+- '0.10'
+- '0.11'
+after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+deploy:
+  provider: npm
+  email: tituswormer@gmail.com
+  api_key:
+    secure: O+kAfZtOSCIVm17xYLQw6LR+39QMdKMzc/AwRiW+Z31Rx0wBdTLBV6g4ueYQozzodm4NjY5qJMLKri1It8irKMOgAC3COZA690vuLMSAWYKmk4qhXOC/TSwTAum1eQjM/9rw2oUwydPaPjQqOBhcT3zxpKgAK9jDa4mVlykz+3k=
+  on:
+    repo: wooorm/retext-walk

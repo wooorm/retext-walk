@@ -1,0 +1,14 @@
+{
+  "name": "retext-walk",
+  "version": "0.0.1",
+  "description": "Retext node walker",
+  "license": "MIT",
+  "keywords": [
+    "retext",
+    "walk"
+  ],
+  "repository": "wooorm/retext-walk",
+  "scripts" : [
+    "index.js"
+  ]
+}
