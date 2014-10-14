@@ -7,6 +7,9 @@
     "retext",
     "walk"
   ],
+  "dependencies": {
+    "retext-find": "^0.1.0"
+  },
   "author": "Titus Wormer <tituswormer@gmail.com>",
   "devDependencies": {
     "eslint": "^0.8.0",

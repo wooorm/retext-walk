@@ -1,34 +1,18 @@
 'use strict';
 
 /**
+ * Dependencies.
+ */
+
+var retextFind;
+
+retextFind = require('retext-find');
+
+/**
  * Define `walk`.
  */
 
 function walk() {}
-
-function findNextParent(node) {
-    while (node) {
-        node = node.parent;
-
-        if (node && node.next) {
-            return node.next;
-        }
-    }
-
-    return null;
-}
-
-function findPrevParent(node) {
-    while (node) {
-        node = node.parent;
-
-        if (node && node.prev) {
-            return node.prev;
-        }
-    }
-
-    return null;
-}
 
 /**
  * Walk the tree forwards.
@@ -45,7 +29,7 @@ function walkForwards(type, callback) {
         type = null;
     }
 
-    node = this.next || findNextParent(this);
+    node = this.next || this.findAfterUpwards();
 
     while (node) {
         if (!type || node.type === type) {
@@ -54,7 +38,7 @@ function walkForwards(type, callback) {
             }
         }
 
-        node = node.head || node.next || findNextParent(node);
+        node = node.head || node.next || node.findAfterUpwards();
     }
 }
 
@@ -73,7 +57,7 @@ function walkBackwards(type, callback) {
         type = null;
     }
 
-    node = this.prev || findPrevParent(this);
+    node = this.prev || this.findBeforeUpwards();
 
     while (node) {
         if (!type || node.type === type) {
@@ -82,7 +66,8 @@ function walkBackwards(type, callback) {
             }
         }
 
-        node = node.tail || node.head || node.prev || findPrevParent(node);
+        node = node.tail || node.head || node.prev ||
+            node.findBeforeUpwards();
     }
 }
 
@@ -122,6 +107,8 @@ function walkUpwards(type, callback) {
 
 function attach(retext) {
     var nodePrototype;
+
+    retext.use(retextFind);
 
     nodePrototype = retext.TextOM.Node.prototype;
 

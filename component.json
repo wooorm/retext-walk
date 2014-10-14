@@ -7,8 +7,11 @@
     "retext",
     "walk"
   ],
+  "dependencies": {
+    "wooorm/retext-find": "^0.1.0"
+  },
   "repository": "wooorm/retext-walk",
-  "scripts" : [
+  "scripts": [
     "index.js"
   ]
 }
