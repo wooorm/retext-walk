@@ -1,6 +1,7 @@
 'use strict';
 
 var walk,
+    inspect,
     Retext,
     assert,
     retext,
@@ -12,6 +13,7 @@ var walk,
  */
 
 walk = require('./');
+inspect = require('retext-inspect');
 Retext = require('retext');
 assert = require('assert');
 
@@ -21,7 +23,7 @@ assert = require('assert');
 
 paragraph = 'Some simple text. Other sentence.';
 
-retext = new Retext().use(walk);
+retext = new Retext().use(walk).use(inspect);
 TextOM = retext.TextOM;
 
 /**
