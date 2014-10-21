@@ -3,13 +3,10 @@
 var walk,
     inspect,
     Retext,
-    assert,
-    retext,
-    TextOM,
-    paragraph;
+    assert;
 
 /**
- * Module dependencies.
+ * Dependencies.
  */
 
 walk = require('./');
@@ -18,23 +15,28 @@ Retext = require('retext');
 assert = require('assert');
 
 /**
- * Constants.
+ * Fixtures.
  */
 
+var paragraph;
+
 paragraph = 'Some simple text. Other sentence.';
+
+/**
+ * Retext.
+ */
+
+var retext,
+    TextOM;
 
 retext = new Retext().use(walk).use(inspect);
 TextOM = retext.TextOM;
 
 /**
- * Unit tests.
+ * Check if `Node` and its sub-classers have a method.
+ *
+ * @param {string} methodName
  */
-
-describe('retext-walk()', function () {
-    it('should be a `function`', function () {
-        assert(typeof walk === 'function');
-    });
-});
 
 function assertNodeHasMethod(methodName) {
     assert(typeof new TextOM.Parent()[methodName] === 'function');
@@ -46,11 +48,22 @@ function assertNodeHasMethod(methodName) {
     assert(typeof new TextOM.ParagraphNode()[methodName] === 'function');
     assert(typeof new TextOM.SentenceNode()[methodName] === 'function');
     assert(typeof new TextOM.WordNode()[methodName] === 'function');
+    assert(typeof new TextOM.SymbolNode()[methodName] === 'function');
     assert(typeof new TextOM.WhiteSpaceNode()[methodName] === 'function');
     assert(typeof new TextOM.PunctuationNode()[methodName] === 'function');
     assert(typeof new TextOM.TextNode()[methodName] === 'function');
     assert(typeof new TextOM.SourceNode()[methodName] === 'function');
 }
+
+/**
+ * Tests.
+ */
+
+describe('retext-walk()', function () {
+    it('should be a `function`', function () {
+        assert(typeof walk === 'function');
+    });
+});
 
 describe('retext-walk.attach()', function () {
     it('should be a `function`', function () {
