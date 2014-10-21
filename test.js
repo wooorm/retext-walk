@@ -93,7 +93,7 @@ describe('Node#walkForwards', function () {
 
             tree.head.head.head.walkForwards(callback);
 
-            assert(counter === 21);
+            assert(counter === 15);
         });
 
         it('should work when no direct sibling exists', function () {
@@ -107,7 +107,7 @@ describe('Node#walkForwards', function () {
 
             tree.head.head.tail.walkForwards(callback);
 
-            assert(counter === 11);
+            assert(counter === 8);
         });
 
         it('should stop invoking when callback returns false', function () {
@@ -169,7 +169,7 @@ describe('Node#walkBackwards', function () {
 
             tree.head.tail.tail.walkBackwards(callback);
 
-            assert(counter === 21);
+            assert(counter === 16);
         });
 
         it('should work when no direct sibling exists', function () {
@@ -183,7 +183,7 @@ describe('Node#walkBackwards', function () {
 
             tree.head.tail.head.walkBackwards(callback);
 
-            assert(counter === 15);
+            assert(counter === 11);
         });
 
         it('should stop invoking when callback returns false', function () {
