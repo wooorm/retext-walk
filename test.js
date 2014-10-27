@@ -63,12 +63,6 @@ describe('retext-walk()', function () {
     it('should be a `function`', function () {
         assert(typeof walk === 'function');
     });
-});
-
-describe('retext-walk.attach()', function () {
-    it('should be a `function`', function () {
-        assert(typeof walk.attach === 'function');
-    });
 
     it('should attach a `walkForwards` method on `Node#`', function () {
         assertNodeHasMethod('walkForwards');

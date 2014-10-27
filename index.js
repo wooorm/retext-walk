@@ -9,12 +9,6 @@ var retextFind;
 retextFind = require('retext-find');
 
 /**
- * Define `walk`.
- */
-
-function walk() {}
-
-/**
  * Walk the tree forwards.
  *
  * @param {string} [type]
@@ -100,12 +94,12 @@ function walkUpwards(type, callback) {
 }
 
 /**
- * Define `attach`.
+ * Define `walk`.
  *
  * @param {Retext} retext
  */
 
-function attach(retext) {
+function walk(retext) {
     var nodePrototype;
 
     retext.use(retextFind);
@@ -116,12 +110,6 @@ function attach(retext) {
     nodePrototype.walkBackwards = walkBackwards;
     nodePrototype.walkUpwards = walkUpwards;
 }
-
-/**
- * Expose `attach`.
- */
-
-walk.attach = attach;
 
 /**
  * Expose `walk`.
