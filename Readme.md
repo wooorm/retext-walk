@@ -1,4 +1,4 @@
-# retext-walk [![Build Status](https://travis-ci.org/wooorm/retext-walk.svg?branch=master)](https://travis-ci.org/wooorm/retext-walk) [![Coverage Status](https://img.shields.io/coveralls/wooorm/retext-walk.svg)](https://coveralls.io/r/wooorm/retext-walk?branch=master)
+# retext-walk [![Build Status](https://img.shields.io/travis/wooorm/retext-walk.svg?style=flat)](https://travis-ci.org/wooorm/retext-walk) [![Coverage Status](https://img.shields.io/coveralls/wooorm/retext-walk.svg?style=flat)](https://coveralls.io/r/wooorm/retext-walk?branch=master)
 
 **[retext](https://github.com/wooorm/retext "Retext")** node walker.
 
