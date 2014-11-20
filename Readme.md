@@ -22,16 +22,11 @@ $ bower install retext-walk
 ## Usage
 
 ```js
-var Retext,
-    retext,
-    inspect,
-    walk;
+var Retext = require('retext');
+var walk = require('retext-walk');
+var inspect = require('retext-inspect');
 
-Retext = require('retext');
-walk = require('retext-walk');
-inspect = require('retext-inspect');
-
-retext = new Retext().use(walk).use(inspect);
+var retext = new Retext().use(walk).use(inspect);
 
 /**
  * See each method below.
@@ -74,64 +69,46 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
 retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
   tree.tail.walkBackwards(console.log);
   /**
-   * WhiteSpaceNode[1]
-   * └─ TextNode: '\n\n'
-   *
-   * TextNode: '\n\n'
+   * WhiteSpaceNode: '\n\n'
    *
    * ParagraphNode[1]
    * └─ SentenceNode[6]
    *    ├─ WordNode[1]
    *    │  └─ TextNode: 'Some'
-   *    ├─ WhiteSpaceNode[1]
-   *    │  └─ TextNode: ' '
+   *    ├─ WhiteSpaceNode: ' '
    *    ├─ WordNode[1]
    *    │  └─ TextNode: 'simple'
-   *    ├─ WhiteSpaceNode[1]
-   *    │  └─ TextNode: ' '
+   *    ├─ WhiteSpaceNode: ' '
    *    ├─ WordNode[1]
    *    │  └─ TextNode: 'text'
-   *    └─ PunctuationNode[1]
-   *       └─ TextNode: '.'
+   *    └─ PunctuationNode: '.'
    *
    * SentenceNode[6]
    * ├─ WordNode[1]
    * │  └─ TextNode: 'Some'
-   * ├─ WhiteSpaceNode[1]
-   * │  └─ TextNode: ' '
+   * ├─ WhiteSpaceNode: ' '
    * ├─ WordNode[1]
    * │  └─ TextNode: 'simple'
-   * ├─ WhiteSpaceNode[1]
-   * │  └─ TextNode: ' '
+   * ├─ WhiteSpaceNode: ' '
    * ├─ WordNode[1]
    * │  └─ TextNode: 'text'
-   * └─ PunctuationNode[1]
-   *    └─ TextNode: '.'
+   * └─ PunctuationNode: '.'
    *
-   * PunctuationNode[1]
-   * └─ TextNode: '.'
-   *
-   * TextNode: '.'
+   * PunctuationNode: '.'
    *
    * WordNode[1]
    * └─ TextNode: 'text'
    *
    * TextNode: 'text'
    *
-   * WhiteSpaceNode[1]
-   * └─ TextNode: ' '
-   *
-   * TextNode: ' '
+   * WhiteSpaceNode: ' '
    *
    * WordNode[1]
    * └─ TextNode: 'simple'
    *
    * TextNode: 'simple'
    *
-   * WhiteSpaceNode[1]
-   * └─ TextNode: ' '
-   *
-   * TextNode: ' '
+   * WhiteSpaceNode: ' '
    *
    * WordNode[1]
    * └─ TextNode: 'Some'
@@ -162,16 +139,13 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
    * SentenceNode[6]
    * ├─ WordNode[1]
    * │  └─ TextNode: 'Some'
-   * ├─ WhiteSpaceNode[1]
-   * │  └─ TextNode: ' '
+   * ├─ WhiteSpaceNode: ' '
    * ├─ WordNode[1]
    * │  └─ TextNode: 'simple'
-   * ├─ WhiteSpaceNode[1]
-   * │  └─ TextNode: ' '
+   * ├─ WhiteSpaceNode: ' '
    * ├─ WordNode[1]
    * │  └─ TextNode: 'text'
-   * └─ PunctuationNode[1]
-   *    └─ TextNode: '.'
+   * └─ PunctuationNode: '.'
    */
 });
 ```
