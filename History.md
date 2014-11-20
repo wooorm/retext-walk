@@ -1,4 +1,13 @@
 
+n.n.n / 2014-11-20
+==================
+
+ * Refactor useage examples for changes in retext@0.3.0 in `Readme.md`
+ * Fix incorrect executive rights on `test.js`
+ * Add flat badges to `Readme.md`
+ * Refactor npm script targets in `package.json`
+ * Update retext, retext-inspect
+
 0.1.2 / 2014-10-27
 ==================
 
