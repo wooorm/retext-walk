@@ -1,5 +1,5 @@
 
-n.n.n / 2014-11-20
+0.1.3 / 2014-11-20
 ==================
 
  * Refactor useage examples for changes in retext@0.3.0 in `Readme.md`
