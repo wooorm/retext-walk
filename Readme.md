@@ -155,4 +155,4 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
 
 ## License
 
-MIT © Titus Wormer
+MIT © [Titus Wormer](http://wooorm.com)
