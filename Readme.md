@@ -153,6 +153,26 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
 - walkUpwards(type, callback) - Visit every upwards node of `type`;
 - walkUpwards(callback) - Visit every upwards node.
 
+## Performance
+
+```
+              Forwards from a document's first paragraph
+  14,225 op/s » A section
+     915 op/s » An article
+  
+              Forwards over paragraphs from a document's first paragraph
+  10,699 op/s » A section
+     754 op/s » An article
+  
+              Backwards from a document's last paragraph
+  10,032 op/s » A section
+     708 op/s » An article
+  
+              Backwards over paragraphs from a document's last paragraph
+   8,566 op/s » A section
+     594 op/s » An article
+```
+
 ## License
 
 MIT © [Titus Wormer](http://wooorm.com)
