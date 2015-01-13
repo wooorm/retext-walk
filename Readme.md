@@ -5,23 +5,26 @@
 ## Installation
 
 npm:
-```sh
+
+```bash
 $ npm install retext-walk
 ```
 
 Component:
-```sh
+
+```bash
 $ component install wooorm/retext-walk
 ```
 
 Bower:
-```sh
+
+```bash
 $ bower install retext-walk
 ```
 
 ## Usage
 
-```js
+```javascript
 var Retext = require('retext');
 var walk = require('retext-walk');
 var inspect = require('retext-inspect');
@@ -41,7 +44,7 @@ All methods accept a `callback` parameter, which receives a `node` when invoked,
 
 ### Node#walkForwards(type?, callback)
 
-```js
+```javascript
 retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
   tree.head.head.head.head.walkForwards(tree.WORD_NODE, console.log);
   /**
@@ -65,7 +68,7 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
 
 ### Node#walkBackwards(type?, callback)
 
-```js
+```javascript
 retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
   tree.tail.walkBackwards(console.log);
   /**
@@ -123,7 +126,7 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
 
 ### Node#walkUpwards(type?, callback)
 
-```js
+```javascript
 retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
   tree.head.head.head.head.walkUpwards(function (node) {
       console.log(node);
@@ -155,7 +158,7 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
 
 ## Performance
 
-```
+```text
               Forwards from a document's first paragraph
   14,225 op/s » A section
      915 op/s » An article
