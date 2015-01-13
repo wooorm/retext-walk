@@ -22,6 +22,12 @@ $ component install wooorm/retext-walk
 $ bower install retext-walk
 ```
 
+[Duo](http://duojs.org/#getting-started):
+
+```javascript
+var walk = require('wooorm/retext-walk');
+```
+
 ## Usage
 
 ```javascript
