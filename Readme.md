@@ -31,7 +31,7 @@ var inspect = require('retext-inspect');
 
 var retext = new Retext().use(walk).use(inspect);
 
-/**
+/*
  * See each method below.
  */
 ```
@@ -47,7 +47,7 @@ All methods accept a `callback` parameter, which receives a `node` when invoked,
 ```javascript
 retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
   tree.head.head.head.head.walkForwards(tree.WORD_NODE, console.log);
-  /**
+  /*
    * WordNode[1]
    * └─ TextNode: 'simple'
    *
@@ -71,7 +71,7 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
 ```javascript
 retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
   tree.tail.walkBackwards(console.log);
-  /**
+  /*
    * WhiteSpaceNode: '\n\n'
    *
    * ParagraphNode[1]
@@ -135,7 +135,7 @@ retext.parse('Some simple text.\n\nAnother paragraph.', function (err, tree) {
           return false;
       }
   });
-  /**
+  /*
    * WordNode[1]
    * └─ TextNode: 'Some'
    *
