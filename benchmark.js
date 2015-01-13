@@ -3,14 +3,14 @@
 var Retext,
     retextWalk;
 
-/**
+/*
  * Dependencies.
  */
 
 Retext = require('retext');
 retextWalk = require('./');
 
-/**
+/*
  * Dependencies.
  */
 
@@ -18,7 +18,7 @@ var retext;
 
 retext = new Retext().use(retextWalk);
 
-/**
+/*
  * Test data: A (big?) article (w/ 100 paragraphs, 500
  * sentences, 10,000 words);
  *
@@ -64,6 +64,9 @@ before(function (done) {
     });
 });
 
+/**
+ * No-operation.
+ */
 function noop() {}
 
 suite('Forwards from a document\'s first paragraph', function () {

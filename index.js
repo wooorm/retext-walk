@@ -1,6 +1,6 @@
 'use strict';
 
-/**
+/*
  * Dependencies.
  */
 
@@ -14,7 +14,6 @@ retextFind = require('retext-find');
  * @param {string} [type]
  * @param {function(node): false?} callback
  */
-
 function walkForwards(type, callback) {
     var node;
 
@@ -42,7 +41,6 @@ function walkForwards(type, callback) {
  * @param {string} [type]
  * @param {function(node): false?} callback
  */
-
 function walkBackwards(type, callback) {
     var node;
 
@@ -71,7 +69,6 @@ function walkBackwards(type, callback) {
  * @param {string} [type]
  * @param {function(node): false?} callback
  */
-
 function walkUpwards(type, callback) {
     var node;
 
@@ -98,7 +95,6 @@ function walkUpwards(type, callback) {
  *
  * @param {Retext} retext
  */
-
 function walk(retext) {
     var nodePrototype;
 
@@ -111,7 +107,7 @@ function walk(retext) {
     nodePrototype.walkUpwards = walkUpwards;
 }
 
-/**
+/*
  * Expose `walk`.
  */
 

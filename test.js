@@ -5,7 +5,7 @@ var walk,
     Retext,
     assert;
 
-/**
+/*
  * Dependencies.
  */
 
@@ -14,7 +14,7 @@ inspect = require('retext-inspect');
 Retext = require('retext');
 assert = require('assert');
 
-/**
+/*
  * Fixtures.
  */
 
@@ -22,7 +22,7 @@ var paragraph;
 
 paragraph = 'Some simple text. Other sentence.';
 
-/**
+/*
  * Retext.
  */
 
@@ -37,7 +37,6 @@ TextOM = retext.TextOM;
  *
  * @param {string} methodName
  */
-
 function assertNodeHasMethod(methodName) {
     assert(typeof new TextOM.Parent()[methodName] === 'function');
     assert(typeof new TextOM.Element()[methodName] === 'function');
@@ -55,7 +54,7 @@ function assertNodeHasMethod(methodName) {
     assert(typeof new TextOM.SourceNode()[methodName] === 'function');
 }
 
-/**
+/*
  * Tests.
  */
 
@@ -94,6 +93,9 @@ describe('Node#walkForwards', function () {
 
             counter = 0;
 
+            /**
+             * Callback to increment `counter`.
+             */
             function callback() {
                 counter++;
             }
@@ -108,6 +110,9 @@ describe('Node#walkForwards', function () {
 
             counter = 0;
 
+            /**
+             * Callback to increment `counter`.
+             */
             function callback() {
                 counter++;
             }
@@ -122,6 +127,11 @@ describe('Node#walkForwards', function () {
 
             counter = 0;
 
+            /**
+             * Callback to increment `counter`.
+             *
+             * Returns `false` to stop iterating.
+             */
             function callback() {
                 counter++;
 
@@ -141,6 +151,9 @@ describe('Node#walkForwards', function () {
 
                 counter = 0;
 
+                /**
+                 * Callback to increment `counter`.
+                 */
                 function callback() {
                     counter++;
                 }
@@ -170,6 +183,9 @@ describe('Node#walkBackwards', function () {
 
             counter = 0;
 
+            /**
+             * Callback to increment `counter`.
+             */
             function callback() {
                 counter++;
             }
@@ -184,6 +200,9 @@ describe('Node#walkBackwards', function () {
 
             counter = 0;
 
+            /**
+             * Callback to increment `counter`.
+             */
             function callback() {
                 counter++;
             }
@@ -198,6 +217,12 @@ describe('Node#walkBackwards', function () {
 
             counter = 0;
 
+            /**
+             * Callback to increment `counter`.
+             *
+             * Additionally returns `false` to stop
+             * iterating.
+             */
             function callback() {
                 counter++;
 
@@ -217,6 +242,9 @@ describe('Node#walkBackwards', function () {
 
                 counter = 0;
 
+                /**
+                 * Callback to increment `counter`.
+                 */
                 function callback() {
                     counter++;
                 }
@@ -246,6 +274,9 @@ describe('Node#walkUpwards', function () {
 
             counter = 0;
 
+            /**
+             * Callback to increment `counter`.
+             */
             function callback() {
                 counter++;
             }
@@ -260,6 +291,11 @@ describe('Node#walkUpwards', function () {
 
             counter = 0;
 
+            /**
+             * Callback to increment `counter`.
+             *
+             * Also returns `false` to stop walking.
+             */
             function callback() {
                 counter++;
 
@@ -279,6 +315,9 @@ describe('Node#walkUpwards', function () {
 
                 counter = 0;
 
+                /**
+                 * Callback to increment `counter`.
+                 */
                 function callback() {
                     counter++;
                 }
